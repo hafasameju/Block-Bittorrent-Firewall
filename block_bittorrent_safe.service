@@ -1,0 +1,11 @@
+[Unit]
+Description=Block BitTorrent traffic on boot
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/block_bittorrent_safe.sh
+Type=oneshot
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
